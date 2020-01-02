@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Gauge Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    body {
+        text-align: center;
+    }
+
+    #g1,
+    #g2,
+    #g3 {
+        width: 200px;
+        height: 160px;
+        display: inline-block;
+        margin: 1em;
+    }
+
+    p {
+        display: block;
+        width: 450px;
+        margin: 2em auto;
+        text-align: left;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="g1"></div>
+    <div id="g2"></div>
+    <div id="g3"></div>
+    <p>
+        To change the gauge go into the g variable within the script tag and change the value attribute
+    </p>
+    <p>
+        Also to change the min and max you can also change the corresponding values in the script tag as well
+    </p>
+    <script src="../raphael-2.1.4.min.js"></script>
+    <script src="../justgage.js"></script>
+    
+    <script>
+    var g1, g2, g3;
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        g1 = new JustGage({
+            id: "g1",
+            value: 550,
+            min: 350,
+            max: 980,
+            title: "Weight in Grams",
+            label: "Grams"
+        });
+
+        g2 = new JustGage({
+            id: "g2",
+            value: 75,
+            min: 50,
+            max: 100,
+            title: "Weight in Pounds",
+            label: "lbs"
+        });
+
+        g3 = new JustGage({
+            id: "g3",
+            value: 60,
+            min: 50,
+            max: 100,
+            title: "Indicator",
+            label: "Good/Bad"
+        });
+
+//        setInterval(function() {
+//            g1.refresh();
+//            g2.refresh();
+//            g3.refresh();
+//        };
+    });
+    </script>
+</body>
+
+</html>
